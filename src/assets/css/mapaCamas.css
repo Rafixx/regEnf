@@ -1,0 +1,111 @@
+.mapaCamasContent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  /* border: 2px solid #999; */
+  border-radius: 8px;
+  /* padding: 6px; */
+  gap: 6px;
+}
+
+.cardHabitacion {
+  display: flex;
+  flex-direction: row;
+  min-width: 170px;
+
+  border: 1px solid #666;
+  padding: 10px;
+  gap: 10px;
+  border-radius: 8px;
+  background-color: #d0d0d0;
+}
+
+.cardCama {
+  position: relative;
+  width: 72px;
+  height: 100px;
+  border-radius: 10px;
+  padding: 10px;
+  
+  background-color: #fff;
+  font-size: 10px;
+}
+
+.textCama, .textServicio, .emojisContent {
+  display : block;
+  margin-top: 3px;
+  line-height: 1.5;
+  font-size: 12px;
+}
+
+.textServicio {
+  margin-top: 5px;
+  /* font-weight: bolder; */
+}
+
+.textAislamiento {
+  /* display: flex; */
+  position: absolute;  
+  top:5px;
+  left:5px;
+  line-height: 1;
+  font-size: 8px;
+}
+
+.noDoblarHabitacion {
+  border: 2px dashed #666;
+  background-color: #eef;
+}
+
+.camaInhabilitada{
+  background-color: #d0d0d0;
+  color: #828080;
+  border: 2px solid #fff;
+}
+
+.emojisContent {
+  font-size: 20px;
+}
+
+.camaInfo {
+  text-align: center;
+  margin-top: 4px; 
+}
+
+.infoCamaPopOver {
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* ************** LEYENDA **************** */
+.containerLeyenda {
+  display: flex;
+  flex-direction: column; /* Cambiar la dirección a columna para facilitar la alineación vertical */
+  width: 100%;
+  min-width: 650px;
+  height: 80px; 
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #bbb;
+  border-radius: 15px;
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  flex-wrap: wrap;
+}
+
+.containerLeyenda ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  align-items: center; /* Asegurar que los elementos li se alineen en el centro verticalmente */
+  justify-content: space-around;
+}
+
+.containerLeyenda li {
+  margin-right: 5px;
+  min-width: 50px;
+}

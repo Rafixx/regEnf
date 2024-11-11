@@ -1,0 +1,107 @@
+
+.incidencia{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 190px;
+  max-width: 320px;
+  min-width: 200px;
+  line-height: 1;
+  margin-bottom: 8px;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 15px;
+  
+  text-align: left;
+}
+
+.incidencia-eliminada {
+  background-color: #f0e9e9; /* gris claro */
+  color: #721c24; /* rojo oscuro */
+  text-decoration: line-through;
+}
+
+.incidencia-pendiente {
+  background-color: #fff1c2; /* amarillo claro */
+  color: #856404; /* amarillo oscuro */
+}
+
+.incidencia-resuelta {
+  background-color: #d4edda; /* verde claro */
+  color: #155724; /* verde oscuro */
+}
+
+.incidencia-revisar {
+  background-color: #d8688fce; 
+  color: #ffffff; 
+}
+
+
+.incidenciaTitle{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.incidenciaTitlePatient{
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.incidenciaTitleLocation{
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  gap: 4px;
+  justify-content: right;
+}
+
+.incidenciaTipo{
+  text-align: right;
+  
+  font-size: 12px;
+  font-weight: bold;
+  /* color: #f44336; */
+  /* background-color: #ffffff; */
+  /* padding: 3px; */
+  /* border-radius: 5px; */
+}
+
+.incidenciaUsuario{
+  font-size: 12px;
+  font-weight: bold;
+  color: #2196f3;
+}
+
+.incidenciaDetalle{
+  margin: 5px 0;
+  line-height: 1.2;
+  /* font-size: 12px; */
+}
+
+
+.contenedorDietario {
+  display: flex;
+  min-width: 550px;
+  padding: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  height: 90%;
+}
+
+.incidenciasRevisar-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 16px; 
+};
+
+.dietario {
+  min-width: 110px;
+  width: calc(50% - 4px);
+};
+

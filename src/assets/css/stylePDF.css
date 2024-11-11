@@ -1,0 +1,29 @@
+.flex-title {
+  display: flex;
+  align-items: left;
+  margin: 20px 0 0 0;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 0 0;  
+}
+
+.flex-container .label {
+  width: 100px;
+}
+
+.slider-container {
+  flex-grow: 1;
+}
+
+.input-number {
+  margin-left: 16px;
+}
+
+.tooltip-container {
+  background-color: bisque;
+  margin: 15px 0 20px 0;
+  padding: 10px 0 10px 0;;
+}

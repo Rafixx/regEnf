@@ -1,0 +1,96 @@
+/* Estilos para el layout general */
+.layout-style {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 95vh;
+  padding-top: 50px;
+  background-color: #fff;
+  /* border-radius: 8px; */
+  /* overflow: hidden; */
+  /* width: 100%; */
+  /* max-width: 900px; */
+  /* width: 100vh; */
+  /* max-width: 95vh; */
+}
+
+.top-bar {
+  position: fixed;
+  display: flex;
+  justify-content: right;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px 25px;
+  z-index: 1000; /* Asegurarse de que se muestre sobre otros contenidos */
+}
+
+/* Estilos para el header */
+.header-style {
+  text-align: center;
+  /* color: #000; */
+  height: 64px;
+  padding-inline: 48px;
+  line-height: 64px;
+  background-color: #fff;
+  width: 95%;
+  /* border: 1px solid #4096ff; */
+}
+
+@media (max-width: 1060px) {
+  .header-style{
+    height: 128px;
+  }
+}
+
+ /* Estilos para el contenedor del Header */
+ .nav-bar {
+  display: flex;
+  flex-wrap: wrap;  /* Permite que los hijos de .nav-bar se envuelvan si no hay suficiente espacio */
+}
+
+.menu,
+.show-day {
+  flex: 1 0 auto; /* flex-grow, flex-shrink, flex-basis */
+  text-align: right;
+}
+
+.ant-menu-item-selected {
+  background-color: #eee !important; /* Color de fondo personalizado */
+  font-weight: bold;
+  color: #108ee9 !important; /* Color de texto personalizado */
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 1060px) {
+  .menu,
+  .show-day {
+    flex-basis: 100%; /* Hace que cada uno tome el ancho completo de su contenedor */
+    text-align: left
+  }
+}
+
+/* Estilos para el contenido principal */
+.content-style {
+  text-align: center;
+  /* min-width: 1100px; */
+  min-height: 120px;
+  line-height: 120px;
+  /* color: #000; */
+  /* background-color: #fff; */
+  width: 95%;
+  /* border: 1px solid #0958d9; */
+}
+
+/* Estilos para el footer */
+.footer-style {
+  text-align: center;
+  /* color: #000; */
+  /* background-color: #fff; */
+  width: 95%;
+  /* border: 1px solid #4096ff; */
+}
+
