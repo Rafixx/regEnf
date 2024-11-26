@@ -80,6 +80,7 @@ const MyFormIncidencia = ({ fieldList }) => {
       }, 
       incidencia:{
         fecha: new Date( startDay ),
+        nhc: patient.nhc,
         usuario: user.username,
         programa: patient.programa,
         estado: estado,

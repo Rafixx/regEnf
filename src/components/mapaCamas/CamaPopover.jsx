@@ -11,6 +11,7 @@ const CamaPopover = ({ datosOcupacion, fechaGrua, detalleAisladoPreve, detalleAi
           {datosOcupacion && (
             <>
               <p>Paciente: {datosOcupacion.paciente.trim()}</p>
+              <p>NHC: {datosOcupacion.nhc}</p>
               <p>Servicio: {datosOcupacion.serv_med}</p>
             </>
           )}

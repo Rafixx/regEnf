@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { getCamasOcupadas, getCamasGrua,
          getAisladosEnf, getAisladosPreve,
          getCamasInhabilitadas } from '../../services/mapaCamas';
-import { usePlanta } from '../../context/PlantaContext'
+// import { usePlanta } from '../../context/PlantaContext'
 import { usePatient } from '../../context/PatientContext'
 import { useUser } from '../../context/UserContext';
 import CamaPopover from './CamaPopover'; // Asegúrate de que la ruta de importación sea correcta
@@ -15,7 +15,7 @@ const CamasPorPlanta = ({ planta, mapaCamas }) => {
   // const { planta } = usePlanta();
   const { user } = useUser()
   const { setPatient } = usePatient();
-  const { incidencia } = useIncidencia();
+  // const { incidencia } = useIncidencia();
   const [ camasGrua, setCamasGrua ] = useState([]);
   const [ ocupacionCamas, setOcupacionCamas ] = useState([]);
   const [ aisladosPreve, setAisladosPreve ] = useState([]);
@@ -127,6 +127,7 @@ const CamasPorPlanta = ({ planta, mapaCamas }) => {
     // console.log('CamasPorPlanta - Ocupación:', ocupacion);
     
     const myPatient = {
+      nhc: ocupacion.nhc,
       nombre: ocupacion.paciente.trim(),
       cama: camaId,
       programa: ocupacion.serv_med,
