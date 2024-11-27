@@ -92,8 +92,30 @@ const MapaCamasContainer = () => {
         <div style={{ fontSize: '16px', fontWeight: 'bold' }}>NUEVA INCIDENCIA</div>
         <Button type="text" onClick={closeDrawer} icon={<CloseOutlined />} />
       </div>
-      <div style={{ backgroundColor: '#def', width: '100%', textAlign: 'center', padding: '8px 0' }}>
-        {patient && patient.nombre} - {patient && patient.cama}
+      <div style={{
+        backgroundColor: '#def',
+        width: '100%',
+        padding: '8px',
+        borderRadius: '8px',
+        display: 'flex',
+        flexDirection: 'column', // Alineación en columna
+        justifyContent: 'space-between'
+      }}>
+        <div style={{ textAlign: 'left' }}>
+          {patient && patient.nombre}
+        </div>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          width: '100%'
+        }}>
+          <span style={{ textAlign: 'left' }}>
+            🛌 {patient && patient.cama}
+          </span>
+          <span style={{ textAlign: 'right' }}>
+            📂 {patient && patient.nhc}
+          </span>
+        </div>
       </div>
       {dayNotToday && <div style={{ textAlign: 'right' }}>Se creará con fecha <span style={{ color: 'red', fontSize: '16px' }}>{myDate}</span></div>}
     </div>

@@ -197,6 +197,7 @@ const IncidenciaCard = ({ incidencia }) => {
                 <Tag color='orange' >{myIncidencia.cama}</Tag>
               </Popover>
               {myIncidencia.programa && <Tag color='blue' >{myIncidencia.programa}</Tag>}
+              {myIncidencia.nhc && <Tag color='magenta' >{myIncidencia.nhc}</Tag>}
             </div>
           </div> 
           
