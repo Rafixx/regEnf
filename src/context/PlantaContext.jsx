@@ -5,7 +5,7 @@ const PlantaContext = createContext();
 export const usePlanta = () => useContext(PlantaContext);
 
 export const PlantaProvider = ({ children }) => {
-  const [planta, setPlanta] = useState('1A')
+  const [planta, setPlanta] = useState()//useState('1A')
   const [fullMap, setFullMap] = useState(false)
 
   return (
@@ -14,3 +14,4 @@ export const PlantaProvider = ({ children }) => {
     </PlantaContext.Provider>
   );
 };
+

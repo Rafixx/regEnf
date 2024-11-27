@@ -53,7 +53,7 @@ const Header = () => {
         <Menu 
           mode="horizontal" 
           items={[ ...items ]} 
-          defaultSelectedKeys={[items[0].key]}
+          // defaultSelectedKeys={[items[0].key]}
           // theme='dark'
           // items={[...items, itemFullMapaCamas]} 
           // inlineCollapsed={collapsed}

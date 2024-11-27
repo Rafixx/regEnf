@@ -10,7 +10,7 @@ import CamasPorPlanta from './mapaCamas/CamasPorPlanta';
 import MapaCamasLeyenda from './mapaCamas/mapaCamasLeyenda'; 
 import FullMapaCamas from './mapaCamas/FullMapaCamas';
 import Dietario from './dietario/dietario';
-import { Button, Drawer, Col, Row, Tag } from 'antd';
+import { Button, Drawer, Col, Row, Alert } from 'antd';
 import {CloseOutlined } from '@ant-design/icons';
 
 const MapaCamasContainer = () => {
@@ -129,20 +129,35 @@ const MapaCamasContainer = () => {
           <FullMapaCamas mapaCamas={mapaCamas} />
         </Row>
       : <>
-          <Row >
-            <Col span={12} >
-              <CamasPorPlanta planta={planta} mapaCamas={mapaCamas} />
-              <MapaCamasLeyenda />
-            </Col>
-            <Col span={12} >
-              <Dietario numDays={2}/>
-            </Col>
-          </Row>
-          <Row >
-            <Col span={24}>
-              <Dietario numDays={4}/>
-            </Col>
-          </Row>
+              {planta? ( 
+                <>
+                  <Row >
+                    <Col span={12} >
+                      <CamasPorPlanta planta={planta} mapaCamas={mapaCamas} />
+                      <MapaCamasLeyenda />
+                    </Col>
+                    <Col span={12} >
+                      <Dietario numDays={2}/> 
+                    </Col>
+                  </Row>
+                  <Row >
+                    <Col span={24}>
+                      <Dietario numDays={4}/> 
+                    </Col>
+                  </Row>
+                </>
+              )
+              :
+                <Row>
+                  <Col span={24}>
+                    <Alert
+                      message=" SELECCIIONA UNA PLANTA "
+                      style={{fontSize:'20px', fontWeight:'bold', color:'blue'}}
+                      type='info'
+                    />
+                  </Col>
+                </Row>
+              }
         </>
       }
     </div> 
