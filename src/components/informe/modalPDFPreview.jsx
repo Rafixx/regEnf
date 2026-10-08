@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Modal, Button } from 'antd'
+import { Modal } from 'antd'
 import { PDFViewer } from '@react-pdf/renderer'
 import PDFDocument from './PDFDocument'
 

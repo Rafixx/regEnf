@@ -7,7 +7,6 @@ import { useUser } from '../../context/UserContext'
 import { handleEstadoIncidencia } from '../../services/incidencias'
 import { useState } from 'react'
 import LogIncicencia from '../incidencias/LogIncidencia'
-import { itemNoUser } from '../customComponents/UnauthorizedUser'
 
 import dayjs from 'dayjs'
 import customParseFormat from 'dayjs/plugin/customParseFormat'
@@ -20,9 +19,6 @@ const IncidenciaCard = ({ incidencia }) => {
   const { setPatient } = usePatient()
   const [myIncidencia, setMyIncidencia] = useState(incidencia) // [1
   const { setIncidenciaEdited, incidenciasRevisar, setIncidenciasRevisar } = useIncidencia()
-
-  const incidenciaFecha = dayjs(incidencia.fecha).format('DD/MM/YYYY')
-  const incidenciaHora = dayjs(incidencia.fecha).format('HH:mm')
 
   // Función auxiliar para manejar el detalle de cada tipo de incidencia
   const renderDetalle = (detalle) => {

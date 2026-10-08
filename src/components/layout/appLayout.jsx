@@ -1,6 +1,6 @@
 // CustomLayout.jsx
 import React from 'react'
-import { Flex, Tag, Layout, Space, Switch, Typography } from 'antd'
+import { Flex, Tag, Layout, Space, Switch } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
 import Header from './header'
 import Footer from './footer'

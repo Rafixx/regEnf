@@ -77,9 +77,11 @@ export const handleEstadoIncidencia = async (incidencia) => {
   }
 }
 
+export const getLogsIncidenciaUrl = (idIncidencia) => `${URLAPI}/logs/${idIncidencia}`
+
 export const getLogsIncidencia = async (idIncidencia) => {
   try {
-    const response = await axios(`${URLAPI}/logs/${idIncidencia}`)
+    const response = await axios(getLogsIncidenciaUrl(idIncidencia))
     return response.data
   } catch (error) {
     console.error('Error al cargar los logs de la incidencia:', error)

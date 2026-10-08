@@ -1,4 +1,4 @@
-import { Form, Col, Checkbox, Input, InputNumber, DatePicker, TimePicker, Select, Switch } from 'antd'
+import { Form, Checkbox, Input, InputNumber, DatePicker, TimePicker, Select, Switch } from 'antd'
 import locale from 'antd/es/date-picker/locale/es_ES'
 import 'dayjs/locale/es'
 

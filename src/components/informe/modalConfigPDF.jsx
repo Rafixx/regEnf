@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Modal, Button, InputNumber, Slider, Table } from 'antd'
 import { FilePdfTwoTone } from '@ant-design/icons'
-import ModalPDFPreview from './modalPDFPreview'
 import { Typography } from 'antd'
 import { useIncidencia } from '../../context/IncidenciaContext'
 import { getFormatDate, normalizeDate, getDay } from '../../utils/helper'
@@ -14,7 +13,6 @@ const ModalConfigPDF = () => {
   const [inputValue, setInputValue] = useState(1)
   const { startDay, incidencias } = useIncidencia()
   const [incidenciasToPrint, setIncidenciasToPrint] = useState([])
-  const [showPDFPreview, setShowPDFPreview] = useState(false) // Nuevo estado para controlar el PDF preview
   const [filteredAndSortedData, setFilteredAndSortedData] = useState([])
 
   useEffect(() => {
@@ -39,11 +37,6 @@ const ModalConfigPDF = () => {
   const showModal = () => {
     setInputValue(0)
     setIsModalVisible(true)
-  }
-
-  const handleOk = () => {
-    setShowPDFPreview(true)
-    // setIsModalVisible(false);
   }
 
   const handleCancel = () => {
@@ -208,7 +201,7 @@ const ModalConfigPDF = () => {
         width={1200}
         title='Configuración del PDF'
         open={isModalVisible}
-        onOk={handleCancel} // {handleOk}
+        onOk={handleCancel}
         okText=''
         // okText="Generar PDF"
         onCancel={handleCancel}
@@ -251,9 +244,6 @@ const ModalConfigPDF = () => {
 
         </div>
       </Modal>
-      {/* {showPDFPreview && (
-        <ModalPDFPreview dataToPrint={filteredAndSortedData} onClose={() => setShowPDFPreview(false)} />
-      )} */}
 
     </>
   )

@@ -1,12 +1,10 @@
-import { Button, List, Typography } from 'antd'
+import { List, Typography } from 'antd'
 import { useEffect, useState } from 'react'
-import { InfoCircleOutlined } from '@ant-design/icons'
-import { getLogsIncidencia } from '../../services/incidencias'
+import { getLogsIncidencia, getLogsIncidenciaUrl } from '../../services/incidencias'
 
 const { Link, Text } = Typography
 
 const LogIncidencia = ({ incidencia }) => {
-  const [showDesc, setShowDesc] = useState(false)
   const [logs, setLogs] = useState([])
 
   useEffect(() => {
@@ -47,9 +45,6 @@ const LogIncidencia = ({ incidencia }) => {
 
   return (
     <>
-      {/* <Button type="primary" onClick={() => setShowDesc(!showDesc)} icon={<InfoCircleOutlined />} />
-      {showDesc && (
-        <> */}
       <Text>Últimos logs</Text>
       <List
         bordered
@@ -64,12 +59,10 @@ const LogIncidencia = ({ incidencia }) => {
         )}
       />
       {logs.length > 3 && (
-        <Link href={`http://vvdpedwebpre01:3006/api/logs/${incidencia.idIncidencia}`} target='_blank' rel='noreferrer'>
+        <Link href={getLogsIncidenciaUrl(incidencia.idIncidencia)} target='_blank' rel='noreferrer'>
           Ver todos los logs
         </Link>
       )}
-      {/* </>
-      )} */}
     </>
   )
 }
