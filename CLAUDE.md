@@ -19,4 +19,4 @@ Frontend del "Libro de registro" de enfermería. La API vive en el repo hermano 
 - La planta no tiene valor por defecto (`PlantaContext` arranca con `useState()`): hasta que se elige una no se muestra el mapa. El README todavía dice "1A por defecto", pero está desactualizado.
 - Sin usuario (`?token=` ausente o inválido) la UI muestra "DESCONOCIDO" y desactiva la edición.
 - Los tipos de incidencia del formulario (`items` en `src/components/incidencias/Form_incidencias.jsx`) deben coincidir con los `tipo` que mapea la API (`regEnfAPI/utils/incidencias.js`).
-- No hay tests ni test runner. Para verificar, ejecuta `npm run build` y `npm run lint`.
+- Tests con Vitest + Testing Library (`npm test`, jsdom, setup en `src/test/setup.js`). Los contextos y `services/` se mockean con `vi.mock`, como en `MyFormIncidencia.test.jsx`. Verifica también con `npm run build` y `npm run lint`.
