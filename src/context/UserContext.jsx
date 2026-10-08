@@ -1,26 +1,26 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
-import { getUserToken, getUsuario } from '../services/users';
+import { getUserToken, getUsuario } from '../services/users'
 
 const UserContext = createContext()
 
-export const useUser = () => useContext(UserContext);
+export const useUser = () => useContext(UserContext)
 
 export const UserProvider = ({ children }) => {
-  const [ user, setUser ] = useState({})
-  
+  const [user, setUser] = useState({})
+
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const token = await getUserToken();
+        const token = await getUserToken()
 
         if (token) {
-          const usuario = await getUsuario(token);
-          
+          const usuario = await getUsuario(token)
+
           if (usuario && usuario.usuario) {
             const user = {
               username: usuario.usuario
-            };
-            setUser(user);
+            }
+            setUser(user)
           }
         }
         // else {
@@ -28,18 +28,19 @@ export const UserProvider = ({ children }) => {
         //   setUser({username: 'Desconocido'});
         // }
       } catch (error) {
-        console.error('Error al obtener el usuario:', error);
+        console.error('Error al obtener el usuario:', error)
       }
-    };
-    
-    fetchUserData();
+    }
+
+    fetchUserData()
   }, [])
-    
+
   return (
-    <UserContext.Provider value={{ 
-      user, 
-      setUser, 
-    }}>
+    <UserContext.Provider value={{
+      user,
+      setUser,
+    }}
+    >
       {children}
     </UserContext.Provider>
   )

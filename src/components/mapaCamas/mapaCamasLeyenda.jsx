@@ -1,12 +1,12 @@
-import { Tooltip } from 'antd';
+import { Tooltip } from 'antd'
 import '../../assets/css/mapaCamas.css'
 
 const mapaCamasLeyenda = () => {
   return (
-    <div className='containerLeyenda' >
-      <ul> 
-        <li ><Tooltip title='Aislamiento por Preventiva'>🟢 AP </Tooltip></li>
-        <li ><Tooltip title='Aislamiento por Enfermería'>🟣 AE </Tooltip></li> 
+    <div className='containerLeyenda'>
+      <ul>
+        <li><Tooltip title='Aislamiento por Preventiva'>🟢 AP </Tooltip></li>
+        <li><Tooltip title='Aislamiento por Enfermería'>🟣 AE </Tooltip></li>
         <li>🧔🏻 Hombre </li>
         <li>👩🏻‍🦰 Mujer </li>
         <li>⛠ Grúa </li>
@@ -14,7 +14,7 @@ const mapaCamasLeyenda = () => {
         <li> <span className='camaInhabilitada'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> Inhabilitada </li>
       </ul>
     </div>
-  );
+  )
 }
 
-export default mapaCamasLeyenda;
+export default mapaCamasLeyenda
