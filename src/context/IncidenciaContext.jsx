@@ -1,16 +1,16 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react'
 
-const IncidenciaContext = createContext();
+const IncidenciaContext = createContext()
 
-export const useIncidencia = () => useContext(IncidenciaContext);
+export const useIncidencia = () => useContext(IncidenciaContext)
 
 export const IncidenciaProvider = ({ children }) => {
-  const [incidencias, setIncidencias] = useState([]);
-  const [incidenciasRevisar, setIncidenciasRevisar] = useState([]);
-  const [incidenciaEdited, setIncidenciaEdited] = useState();
-  const [drawerVisible, setDrawerVisible] = useState(false);
-  const [startDay, setStartDay] = useState(new Date());
-  const [filterByPlanta, setFilterByPlanta] = useState(true);
+  const [incidencias, setIncidencias] = useState([])
+  const [incidenciasRevisar, setIncidenciasRevisar] = useState([])
+  const [incidenciaEdited, setIncidenciaEdited] = useState()
+  const [drawerVisible, setDrawerVisible] = useState(false)
+  const [startDay, setStartDay] = useState(new Date())
+  const [filterByPlanta, setFilterByPlanta] = useState(true)
 
   return (
     <IncidenciaContext.Provider value={{
@@ -26,8 +26,9 @@ export const IncidenciaProvider = ({ children }) => {
       setStartDay,
       filterByPlanta,
       setFilterByPlanta,
-    }}>
+    }}
+    >
       {children}
     </IncidenciaContext.Provider>
-  );
-};
+  )
+}

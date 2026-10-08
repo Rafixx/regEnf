@@ -1,11 +1,11 @@
 // CamaPopover.js
-import React from 'react';
-import { Popover } from 'antd';
+import React from 'react'
+import { Popover } from 'antd'
 import '../../assets/css/mapaCamas.css'
 
 const CamaPopover = ({ datosOcupacion, fechaGrua, detalleAisladoPreve, detalleAisladoEnf, detalleAisladoEnfOtro, children }) => {
   return (
-    <Popover 
+    <Popover
       content={
         <div className='infoCamaPopOver'>
           {datosOcupacion && (
@@ -20,14 +20,14 @@ const CamaPopover = ({ datosOcupacion, fechaGrua, detalleAisladoPreve, detalleAi
           {detalleAisladoEnf && <p>Aislamiento Enfermería: {detalleAisladoEnf}</p>}
           {detalleAisladoEnfOtro && <p> {detalleAisladoEnfOtro}</p>}
         </div>
-      } 
-      title="Información del Paciente" 
-      trigger="hover"
-      // style={{ backgroundColor: '#000', borderColor: '#bbb' }} 
+      }
+      title='Información del Paciente'
+      trigger='hover'
+      // style={{ backgroundColor: '#000', borderColor: '#bbb' }}
     >
-        {children}
+      {children}
     </Popover>
-  );
-};
+  )
+}
 
-export default CamaPopover;
+export default CamaPopover

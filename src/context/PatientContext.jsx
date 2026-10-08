@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState } from 'react'
 
 const PatientContext = createContext()
 
-export const usePatient = () => useContext(PatientContext);
+export const usePatient = () => useContext(PatientContext)
 
 export const PatientProvider = ({ children }) => {
   const [patient, setPatient] = useState('')
