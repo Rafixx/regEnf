@@ -5,7 +5,7 @@ import { useIncidencia } from '../context/IncidenciaContext'
 import { getMapaCamas } from '../services/mapaCamas'
 import { getIncidenciasRevisar, getIncidenciasByDays } from '../services/incidencias'
 
-import Form_incidencias from './incidencias/Form_incidencias'
+import FormIncidencias from './incidencias/Form_incidencias'
 import CamasPorPlanta from './mapaCamas/CamasPorPlanta'
 import MapaCamasLeyenda from './mapaCamas/mapaCamasLeyenda'
 import FullMapaCamas from './mapaCamas/FullMapaCamas'
@@ -178,7 +178,7 @@ const MapaCamasContainer = () => {
         keyboard={false}
         getContainer={false}
       >
-        <Form_incidencias drawerVisible={drawerVisible} />
+        <FormIncidencias drawerVisible={drawerVisible} />
       </Drawer>
     </>
   )

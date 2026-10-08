@@ -1,12 +1,10 @@
-import { Button, List, Typography } from 'antd'
+import { List, Typography } from 'antd'
 import { useEffect, useState } from 'react'
-import { InfoCircleOutlined } from '@ant-design/icons'
 import { getLogsIncidencia } from '../../services/incidencias'
 
 const { Link, Text } = Typography
 
 const LogIncidencia = ({ incidencia }) => {
-  const [showDesc, setShowDesc] = useState(false)
   const [logs, setLogs] = useState([])
 
   useEffect(() => {
@@ -47,9 +45,6 @@ const LogIncidencia = ({ incidencia }) => {
 
   return (
     <>
-      {/* <Button type="primary" onClick={() => setShowDesc(!showDesc)} icon={<InfoCircleOutlined />} />
-      {showDesc && (
-        <> */}
       <Text>Últimos logs</Text>
       <List
         bordered
@@ -68,8 +63,6 @@ const LogIncidencia = ({ incidencia }) => {
           Ver todos los logs
         </Link>
       )}
-      {/* </>
-      )} */}
     </>
   )
 }

@@ -8,7 +8,7 @@ import {
 } from '../../services/masterData'
 import { useIncidencia } from '../../context/IncidenciaContext'
 
-const Form_incidencias = ({ drawerVisible }) => {
+const FormIncidencias = ({ drawerVisible }) => {
   const { incidenciaEdited } = useIncidencia()
   const [activeKeys, setActiveKeys] = useState([])
 
@@ -194,7 +194,7 @@ const Form_incidencias = ({ drawerVisible }) => {
   }))
 
   const itemsFiltered = () => {
-    if (incidenciaEdited != undefined) {
+    if (incidenciaEdited != null) {
       return itemsToDisplay.filter((item) =>
         item.label.trim().toUpperCase() === incidenciaEdited.tipo.trim().toUpperCase()
       )
@@ -224,4 +224,4 @@ const Form_incidencias = ({ drawerVisible }) => {
   )
 }
 
-export default Form_incidencias
+export default FormIncidencias

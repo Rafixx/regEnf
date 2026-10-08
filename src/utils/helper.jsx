@@ -52,7 +52,7 @@ export const toCamelCase = (label) => {
 
   // Convertir a camelCase si es necesario
   return label.split(' ')
-    .map((word, index) => index == 0 ? word : word[0].toUpperCase() + word.substring(1))
+    .map((word, index) => index === 0 ? word : word[0].toUpperCase() + word.substring(1))
     .join('')
 }
 

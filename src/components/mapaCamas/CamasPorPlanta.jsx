@@ -10,7 +10,6 @@ import { useUser } from '../../context/UserContext'
 import CamaPopover from './CamaPopover' // Asegúrate de que la ruta de importación sea correcta
 import { agruparCamasPorHabitacion } from '../../utils/mapaCamas'
 import '../../assets/css/mapaCamas.css'
-import { useIncidencia } from '../../context/IncidenciaContext'
 
 const CamasPorPlanta = ({ planta, mapaCamas }) => {
   // const camasFiltradas = mapaCamas.filter(item => item.planta === planta);
