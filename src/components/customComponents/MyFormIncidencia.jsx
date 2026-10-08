@@ -1,16 +1,17 @@
 import { usePatient } from '../../context/PatientContext'
 import { usePlanta } from '../../context/PlantaContext'
 import { useIncidencia } from '../../context/IncidenciaContext'
-import { Form, Button } from 'antd'
+import { Form, Button, message } from 'antd'
 import MyFormItem from './MyFormItem'
 import { postIncidencia, putIncidencia } from '../../services/incidencias'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { toCamelCase } from '../../utils/helper'
 import { useUser } from '../../context/UserContext'
 import dayjs from 'dayjs'
 
 const MyFormIncidencia = ({ fieldList }) => {
   const [form] = Form.useForm()
+  const [saving, setSaving] = useState(false)
   const { user } = useUser()
   const { patient } = usePatient()
   const { planta } = usePlanta()
@@ -118,6 +119,8 @@ const MyFormIncidencia = ({ fieldList }) => {
   }
 
   const handleSubmit = async (values) => {
+    if (saving) return
+    setSaving(true)
     try {
       // Inicializa un nuevo objeto para los valores formateados
       const formattedValues = { ...values }
@@ -142,6 +145,9 @@ const MyFormIncidencia = ({ fieldList }) => {
       console.log('Respuesta del servidor:', response)
     } catch (error) {
       console.error('Error al enviar el formulario:', error)
+      message.error('No se ha podido guardar la incidencia. Inténtalo de nuevo y, si persiste, avisa a soporte.')
+    } finally {
+      setSaving(false)
     }
   }
 
@@ -161,7 +167,7 @@ const MyFormIncidencia = ({ fieldList }) => {
           <MyFormItem key={index} field={field} style={{ margin: '5px 0 10px 0' }} />
         ))}
         <Form.Item>
-          <Button block type='primary' htmlType='submit'>
+          <Button block type='primary' htmlType='submit' loading={saving}>
             Guardar
           </Button>
         </Form.Item>
