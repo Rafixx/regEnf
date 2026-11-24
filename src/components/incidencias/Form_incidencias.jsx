@@ -1,19 +1,17 @@
-import { Collapse } from 'antd'
-import MyFormIncidencia from '../customComponents/MyFormIncidencia'
-import { useEffect, useState } from 'react'
-import {
-  getMotivosAlta, getMotivosBloqueo, getDestinoAlta,
+import { Collapse } from "antd";
+import MyFormIncidencia from "../customComponents/MyFormIncidencia";
+import { useEffect, useState } from "react";
+import { getMotivosAlta, getMotivosBloqueo, getDestinoAlta, 
   getLugarCaida, getMotivoAusente, getProgramasAsistenciales,
-  getTipoBloqueo, getTipoSalidaRegreso, loadData
-} from '../../services/masterData'
-import { useIncidencia } from '../../context/IncidenciaContext'
+  getTipoBloqueo, getTipoSalidaRegreso, loadData } from '../../services/masterData';
+import { useIncidencia } from "../../context/IncidenciaContext";
 
-const FormIncidencias = ({ drawerVisible }) => {
-  const { incidenciaEdited } = useIncidencia()
-  const [activeKeys, setActiveKeys] = useState([])
+const Form_incidencias = ( {drawerVisible } ) => {
+  const { incidenciaEdited } = useIncidencia();
+  const [activeKeys, setActiveKeys] = useState([]);
 
   const [options, setOptions] = useState({
-    motivosAlta: [],
+    motivosAlta: [],   
     motivosBloqueo: [],
     destinoAlta: [],
     lugarCaida: [],
@@ -28,14 +26,14 @@ const FormIncidencias = ({ drawerVisible }) => {
     // const programasAsistencialesRouter = masterData.programasAsistenciales()
     // const tipoBloqueoRouter = masterData.tipoBloqueo()
 
-  })
+  });
 
   useEffect(() => {
     // Esto asegura que el Collapse siempre se reinicie cuando el Drawer se abra
     if (drawerVisible) {
-      setActiveKeys([])
+      setActiveKeys([]);
     }
-  }, [drawerVisible])
+  }, [drawerVisible]);
 
   useEffect(() => {
     loadData(getMotivosAlta, 'motivosAlta', setOptions, 'motivo')
@@ -44,16 +42,16 @@ const FormIncidencias = ({ drawerVisible }) => {
     loadData(getLugarCaida, 'lugarCaida', setOptions, 'lugar')
     loadData(getMotivoAusente, 'motivoAusente', setOptions, 'motivo')
     loadData(getProgramasAsistenciales, 'programasAsistenciales', setOptions, 'programa')
-    loadData(getTipoBloqueo, 'tipoBloqueo', setOptions, 'tipo')
-    loadData(getTipoSalidaRegreso, 'tipoSalidaRegreso', setOptions, 'tipo')
-  }, [])
+    loadData(getTipoBloqueo, 'tipoBloqueo', setOptions, 'tipo')   
+    loadData(getTipoSalidaRegreso, 'tipoSalidaRegreso', setOptions, 'tipo') 
+  }, []);
 
   const items = [
     {
       fields: [
-        { type: 'Select', label: 'Motivo', name: 'motivo', options: options.motivosAlta },
+        {type: 'Select', label: 'Motivo', name: 'motivo', options: options.motivosAlta},
         // {type: 'Input', label: 'Destino', name: 'destino'},
-        { type: 'TimePicker', label: 'Hora', name: 'horaAlta' },
+        {type: 'TimePicker', label: 'Hora', name: 'horaAlta'},
       ],
       label: 'ALTA',
       key: 'alta',
@@ -68,8 +66,8 @@ const FormIncidencias = ({ drawerVisible }) => {
     // },
     {
       fields: [
-        { type: 'Select', label: 'Indicación', name: 'indicacion', options: options.motivosBloqueo },
-        { type: 'Input', label: 'Responsable', name: 'responsable' },
+        {type: 'Select', label: 'Indicación', name: 'indicacion', options: options.motivosBloqueo},
+        {type: 'Input', label: 'Responsable', name: 'responsable'},
         // {type: 'Input', label: 'Tipo', name: 'tipo', options: options.tipoBloqueo},
       ],
       label: 'BLOQUEO',
@@ -77,79 +75,79 @@ const FormIncidencias = ({ drawerVisible }) => {
     },
     {
       fields: [
-        { type: 'Select', label: 'Lugar', name: 'lugar', options: options.lugarCaida },
-        { type: 'TimePicker', label: 'Hora caida', name: 'horaCaida' },
+        {type: 'Select', label: 'Lugar', name: 'lugar', options: options.lugarCaida},
+        {type: 'TimePicker', label: 'Hora caida', name: 'horaCaida'},
       ],
       label: 'CAIDA',
       key: 'caida',
     },
     {
       fields: [
-        { type: 'Select', label: 'Porgrama destino', name: 'programaDestino', options: options.programasAsistenciales },
-        { type: 'Input', label: 'Responsable', name: 'responsable' },
+        {type: 'Select', label: 'Porgrama destino', name: 'programaDestino', options: options.programasAsistenciales},
+        {type: 'Input', label: 'Responsable', name: 'responsable'},
       ],
       label: 'CAMBIO PROGRAMA',
       key: 'cambioPrograma',
     },
     {
       fields: [
-        { type: 'Input', label: 'Médico', name: 'medico' },
-        { type: 'TimePicker', label: 'Hora de exitus', name: 'horaExitus' },
-      ],
+        {type: 'Input', label: 'Médico', name: 'medico'},
+        {type: 'TimePicker', label: 'Hora de exitus', name: 'horaExitus'},
+      ], 
       label: 'EXITUS',
       key: 'exitus',
     },
     {
       fields: [
-        { type: 'Input', label: 'Médico', name: 'medico' },
-        { type: 'TimePicker', label: 'Hora de ingreso', name: 'horaIngreso' },
-        { type: 'Checkbox', label: 'Grúa', name: 'grua' },
+        {type: 'Input', label: 'Médico', name: 'medico'},
+        {type: 'TimePicker', label: 'Hora de ingreso', name: 'horaIngreso'},
+        {type: 'Checkbox', label: 'Grúa', name: 'grua'},
       ],
       label: 'INGRESO PROGRAMADO',
       key: 'ingresoProgramado',
     },
     {
       fields: [
-        { type: 'Input', label: 'Médico', name: 'medico' },
-        { type: 'TimePicker', label: 'Hora de ingreso', name: 'horaIngreso' },
+        {type: 'Input', label: 'Médico', name: 'medico'},
+        {type: 'TimePicker', label: 'Hora de ingreso', name: 'horaIngreso'},
         // {type: 'Select', label: 'Unidad', name: 'unidad', options: options.unidades},
-        { type: 'Input', label: 'Hospital de referencia', name: 'hospReferencia' },
-        { type: 'Checkbox', label: 'Grúa', name: 'grua' },
+        {type: 'Input', label: 'Hospital de referencia', name: 'hospReferencia'},
+        {type: 'Checkbox', label: 'Grúa', name: 'grua'},
       ],
       label: 'INGRESO URGENTE',
       key: 'ingresoUrgente',
     },
     {
       fields: [
-        { type: 'Select', label: 'Tipo', name: 'tipo', options: options.tipoSalidaRegreso },
-        { type: 'DatePicker', label: 'Fecha', name: 'fechaSalida' },
-        { type: 'TimePicker', label: 'Hora', name: 'horaSalida' },
-        { type: 'Input', label: 'Centro de destino', name: 'centroDestino' },
+        {type: 'Select', label: 'Tipo', name: 'tipo', options: options.tipoSalidaRegreso }, 
+        {type: 'DatePicker', label: 'Fecha', name: 'fechaSalida'},
+        {type: 'TimePicker', label: 'Hora', name: 'horaSalida'},
+        {type: 'Input', label: 'Centro de destino', name: 'centroDestino'},
       ],
       label: 'SALIDA HOSPITAL',
       key: 'salidaHospital',
     },
     {
       fields: [
-        { type: 'Select', label: 'Tipo', name: 'tipo', options: options.tipoSalidaRegreso },
-        { type: 'DatePicker', label: 'Fecha', name: 'fechaRegreso' },
-        { type: 'TimePicker', label: 'Hora', name: 'horaRegreso' },
-        { type: 'Checkbox', label: 'Informe', name: 'informe' },
+        {type: 'Select', label: 'Tipo', name: 'tipo', options: options.tipoSalidaRegreso },
+        {type: 'DatePicker', label: 'Fecha', name: 'fechaRegreso'},
+        {type: 'TimePicker', label: 'Hora', name: 'horaRegreso'},
+        {type: 'Checkbox', label: 'Informe', name: 'informe'},
       ],
       label: 'REGRESO HOSPITAL',
       key: 'regresoHospital',
     },
     {
       fields: [
-        { type: 'Input', label: 'Responsable', name: 'responsable' },
+        {type: 'Input', label: 'Responsable', name: 'responsable'},
       ],
       label: 'RETIRADA BLOQUEO',
       key: 'retiradaBloqueo',
     },
     {
       fields: [
-        { type: 'Input', label: 'Cama de destino', name: 'camaDestino' },
-        { type: 'TimePicker', label: 'Hora', name: 'horaTraslado' },
+        {type: 'Input', label: 'Cama de destino', name: 'camaDestino'},
+        {type: 'TimePicker', label: 'Hora', name: 'horaTraslado'},
       ],
       label: 'TRASLADO CAMA',
       key: 'trasladoCama',
@@ -168,7 +166,7 @@ const FormIncidencias = ({ drawerVisible }) => {
     //     {type: 'Input', label: 'Motivo', name: 'motivo'},
     //     {type: 'Checkbox', label: 'Informe', name: 'informe'},
     //     {type: 'Checkbox', label: 'Regresa', name: 'regresa'},
-    //   ],
+    //   ], 
     //   label: 'PRUEBA CONSULTA',
     // },
     // {
@@ -186,23 +184,23 @@ const FormIncidencias = ({ drawerVisible }) => {
     //   label: 'TRASLADO INTERNO',
     // },
   ]
-
+ 
   const itemsToDisplay = items.map((item) => ({
     key: item.label.trim().toUpperCase(),
     label: item.label,
     children: <MyFormIncidencia fieldList={item} />
-  }))
+  }));
 
   const itemsFiltered = () => {
-    if (incidenciaEdited != null) {
-      return itemsToDisplay.filter((item) =>
+    if (incidenciaEdited != undefined) {
+      return itemsToDisplay.filter((item) => 
         item.label.trim().toUpperCase() === incidenciaEdited.tipo.trim().toUpperCase()
       )
-    } else {
+    }else{
       return itemsToDisplay
     }
   }
-
+  
   // const activeKey = () => {
   //   if (incidenciaEdited != undefined) {
   //     return incidenciaEdited.tipo.trim().toUpperCase()
@@ -213,7 +211,7 @@ const FormIncidencias = ({ drawerVisible }) => {
 
   return (
     <>
-      <Collapse
+      <Collapse 
         accordion
         // defaultActiveKey={[]}
         activeKey={activeKeys}
@@ -221,7 +219,8 @@ const FormIncidencias = ({ drawerVisible }) => {
         items={itemsFiltered()}
       />
     </>
-  )
+  );
 }
 
-export default FormIncidencias
+
+export default Form_incidencias;
